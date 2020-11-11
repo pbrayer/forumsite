@@ -23,9 +23,9 @@ app.use(bodyParser.json());
 // Static files
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-// mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE, {useNewUrlParser: true});
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/reddit", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/reddit", { useNewUrlParser: true });
 
 // Connect to the Mongo DB
 mongoose.Promise = global.Promise;
